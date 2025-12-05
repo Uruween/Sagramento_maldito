@@ -1,8 +1,6 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.SceneManagement;
-using System.Runtime.Serialization;
 
 public class Activador_Por_Teclas : MonoBehaviour
 {
@@ -17,12 +15,8 @@ public class Activador_Por_Teclas : MonoBehaviour
     [SerializeField] List<KeyCode> keys;
 
 
-    
- 
     private void Update()
     {
-        if (SceneManager.GetActiveScene().buildIndex >= 1) Destroy(Canvas);
-
         InteractionKey();
     }
 
@@ -53,7 +47,6 @@ public class Activador_Por_Teclas : MonoBehaviour
             Canvas.SetActive(false);
             animationComplete = false;
             volumen.SetActive(false);
-            gameObject.SetActive(false);
         }
     }
 }
